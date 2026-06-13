@@ -24,7 +24,8 @@ body {
   color: var(--ink);
   background: var(--field);
   background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.028) 0 64px, transparent 64px 128px);
-  min-height: 100vh;
+  min-height: 100vh;            /* fallback */
+  min-height: 100dvh;           /* match the visible viewport on mobile */
   -webkit-text-size-adjust: 100%;
 }
 
@@ -35,7 +36,8 @@ body {
 .shell {
   max-width: 440px;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100vh;            /* fallback */
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -154,8 +156,8 @@ input.code {
 .tile.on .tt { opacity: .85; }
 .tile.disabled { opacity: .45; cursor: not-allowed; }
 
-/* Review list */
-.review-list { display: flex; flex-direction: column; gap: 5px; border: 1.5px solid var(--faint); border-radius: 11px; padding: 9px; }
+/* Review list — scrolls internally so the LOCK IN button stays in view */
+.review-list { display: flex; flex-direction: column; gap: 5px; border: 1.5px solid var(--faint); border-radius: 11px; padding: 9px; max-height: 42dvh; overflow-y: auto; }
 .review-row { display: flex; justify-content: space-between; align-items: center; font: 600 12.5px Helvetica; padding: 5px 2px; border-bottom: 1px dashed #e0d8c4; cursor: pointer; }
 .review-row:last-child { border-bottom: none; }
 .review-row .gl { font: 700 12px Oswald; margin-right: 6px; }
