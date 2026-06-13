@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; }
+    *, *::before, *::after { box-sizing:border-box; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; background:#46553f; background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.028) 0 64px, transparent 64px 128px); padding:36px 30px 70px; font-family:Helvetica, Arial, sans-serif; color:#211d17;">
+
+  <!-- ===== BOARD HEADER ===== -->
+  <div style="max-width:1180px; margin:0 auto 14px;">
+    <div style="font:600 14px Oswald; letter-spacing:.28em; color:#d8c48f; text-transform:uppercase;">Wireframes &middot; low-fi spec for build</div>
+    <h1 style="margin:4px 0 0; font:700 52px Oswald; letter-spacing:.01em; color:#f4eedf; line-height:.98; text-transform:uppercase;">World Cup 2026 &mdash; Prediction Pool</h1>
+    <div style="margin-top:8px; font:600 26px Caveat; color:#e6b8ab;">Pick the group stage with your friends. One link, one name, then guess.</div>
+  </div>
+
+  <!-- legend / scoring + key -->
+  <div style="max-width:1180px; margin:0 auto 40px; display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+    <div style="display:flex; gap:8px; align-items:center; background:#f6f0e2; border:2px solid #211d17; border-radius:12px; padding:8px 13px;">
+      <span style="font:700 12px Oswald; letter-spacing:.05em;">SCORING</span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font:600 13px Helvetica;"><b style="background:#c0492f; color:#fff; border-radius:5px; padding:2px 7px; font:700 12px Oswald;">3</b> group winner</span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font:600 13px Helvetica;"><b style="background:#211d17; color:#f6f0e2; border-radius:5px; padding:2px 7px; font:700 12px Oswald;">2</b> runner-up</span>
+      <span style="display:inline-flex; align-items:center; gap:6px; font:600 13px Helvetica;"><b style="background:#7a6f3f; color:#fff; border-radius:5px; padding:2px 7px; font:700 12px Oswald;">2</b> each correct best-3rd team</span>
+    </div>
+    <div style="font:600 21px Caveat; color:#d8c48f;">max possible = 76 pts</div>
+    <div style="flex:1;"></div>
+    <div style="display:flex; gap:14px; align-items:center; background:rgba(0,0,0,.12); border-radius:10px; padding:7px 13px; font:600 19px Caveat; color:#f4eedf;">
+      <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; background:#c0492f; border:1.5px solid #211d17; border-radius:3px;"></span> selected</span>
+      <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; background:#211d17; border-radius:3px;"></span> runner-up</span>
+      <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:18px; border-top:2px dashed #e6b8ab;"></span> = build note</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SECTION 1 — PLAYER JOURNEY -->
+  <!-- ============================================================= -->
+  <div style="max-width:1180px; margin:0 auto;">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
+      <span style="font:700 17px Oswald; letter-spacing:.05em; color:#211d17; background:#d8c48f; border:2px solid #211d17; border-radius:30px; padding:6px 16px;">PART 1 &middot; PLAYER JOURNEY</span>
+      <span style="flex:1; border-top:2px dashed rgba(255,255,255,.35);"></span>
+      <span style="font:600 21px Caveat; color:#e6b8ab;">friend opens link &rarr; submits picks in ~3 min</span>
+    </div>
+  </div>
+
+  <div style="max-width:1180px; margin:0 auto 56px; display:flex; flex-wrap:wrap; gap:34px 30px;">
+
+    <!-- 1. WELCOME / ENTER NAME -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:18px 16px 22px; display:flex; flex-direction:column; gap:16px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="text-align:center; margin-top:10px;">
+          <div style="font:600 12px Oswald; letter-spacing:.3em; color:#9a8f5f;">PREDICTION POOL</div>
+          <div style="font:700 42px Oswald; line-height:.92; margin-top:6px;">WORLD<br>CUP 26</div>
+          <div style="font:600 22px Caveat; color:#c0492f; margin-top:6px;">Think you know ball? Prove it.</div>
+        </div>
+        <div style="border-top:1.5px dashed #cfc4ab; padding-top:14px; display:flex; flex-direction:column; gap:9px;">
+          <label style="font:600 12px Helvetica; color:#6b6457; letter-spacing:.02em;">WHAT&rsquo;S YOUR NAME?</label>
+          <div style="border:2px solid #211d17; border-radius:11px; padding:13px 14px; background:#fff; font:400 16px Helvetica; color:#b8b0a0;">e.g. Marco</div>
+          <div style="margin-top:4px; background:#c0492f; color:#fff; border:2px solid #211d17; border-radius:12px; padding:14px; text-align:center; font:700 15px Oswald; letter-spacing:.06em;">LET&rsquo;S GO &rarr;</div>
+        </div>
+        <div style="font:600 18px Caveat; color:#6b6457; text-align:center; line-height:1.1;">No password &middot; no signup. Name only.</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9312; &nbsp;Enter your name</figcaption>
+    </figure>
+
+    <!-- 2. HOW IT WORKS -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:18px 16px 22px; display:flex; flex-direction:column; gap:14px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="font:700 26px Oswald; text-transform:uppercase; margin-top:6px;">How it works</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; gap:11px; align-items:flex-start;"><span style="font:700 15px Oswald; background:#211d17; color:#f6f0e2; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">1</span><span style="font:500 14px Helvetica; line-height:1.3;">Pick the <b>winner</b> &amp; <b>runner-up</b> for all 12 groups.</span></div>
+          <div style="display:flex; gap:11px; align-items:flex-start;"><span style="font:700 15px Oswald; background:#211d17; color:#f6f0e2; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex:0 0 auto;">2</span><span style="font:500 14px Helvetica; line-height:1.3;">Choose <b>8 of 12 groups</b> whose 3rd-place team sneaks into the round of 32.</span></div>
+        </div>
+        <div style="border:1.5px dashed #c0492f; border-radius:12px; padding:12px 13px; background:#faf2e6;">
+          <div style="font:700 12px Oswald; letter-spacing:.12em; color:#c0492f; margin-bottom:8px;">POINTS</div>
+          <div style="display:flex; flex-direction:column; gap:7px; font:600 13px Helvetica;">
+            <div style="display:flex; justify-content:space-between;"><span>Correct group winner</span><b style="font:700 14px Oswald;">3</b></div>
+            <div style="display:flex; justify-content:space-between;"><span>Correct runner-up</span><b style="font:700 14px Oswald;">2</b></div>
+            <div style="display:flex; justify-content:space-between;"><span>Each correct best-3rd team</span><b style="font:700 14px Oswald;">2</b></div>
+          </div>
+        </div>
+        <div style="margin-top:2px; background:#211d17; color:#f6f0e2; border-radius:12px; padding:13px; text-align:center; font:700 15px Oswald; letter-spacing:.06em;">START PICKING</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9313; &nbsp;See how scoring works</figcaption>
+    </figure>
+
+    <!-- 3. GROUP WIZARD — GROUP A (completed) -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:12px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font:700 22px Oswald;">&lsaquo;</span>
+          <span style="font:700 22px Oswald; letter-spacing:.04em;">GROUP A</span>
+          <span style="font:600 13px Oswald; color:#9a8f5f;">1 / 12</span>
+        </div>
+        <div style="display:flex; gap:3px;">
+          <span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span>
+          <span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span>
+        </div>
+        <div style="font:600 13px Helvetica; color:#6b6457;">Who finishes <b style="color:#c0492f;">1st</b> &amp; <b style="color:#211d17;">2nd</b>?</div>
+
+        <!-- team rows -->
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">MEX</span>
+          <span style="flex:1; font:600 14px Helvetica;">Mexico</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; background:#c0492f; color:#fff;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">KOR</span>
+          <span style="flex:1; font:600 14px Helvetica;">South Korea</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; color:#c0492f;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; background:#211d17; color:#f6f0e2;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">CZE</span>
+          <span style="flex:1; font:600 14px Helvetica;">Czechia</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">RSA</span>
+          <span style="flex:1; font:600 14px Helvetica;">South Africa</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:4px;">
+          <div style="flex:0 0 auto; border:2px solid #211d17; border-radius:11px; padding:12px 16px; font:700 14px Oswald;">BACK</div>
+          <div style="flex:1; background:#c0492f; color:#fff; border:2px solid #211d17; border-radius:11px; padding:12px; text-align:center; font:700 14px Oswald; letter-spacing:.06em;">NEXT GROUP &rarr;</div>
+        </div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9314; &nbsp;Pick 1st &amp; 2nd &mdash; one group per screen</figcaption>
+    </figure>
+
+    <!-- ANNOTATION between wizard frames -->
+    <div style="width:200px; align-self:center; display:flex; flex-direction:column; gap:8px; justify-content:center;">
+      <div style="font:600 25px Caveat; color:#e6b8ab; line-height:1.05;">&times; 12 groups, A&ndash;L</div>
+      <div style="font:600 19px Caveat; color:#f4eedf; line-height:1.15;">Same screen repeats. Tapping a team&rsquo;s 1ST/2ND auto-clears any conflict. &ldquo;Next&rdquo; is locked until both are set.</div>
+      <div style="border-top:2px dashed #e6b8ab; width:100%; margin-top:4px;"></div>
+      <div style="font:600 18px Caveat; color:#d8c48f; line-height:1.15;">Real teams + real flags in the build (flag = grey box here).</div>
+    </div>
+
+    <!-- 4. GROUP WIZARD — GROUP H (in progress) -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:12px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font:700 22px Oswald;">&lsaquo;</span>
+          <span style="font:700 22px Oswald; letter-spacing:.04em;">GROUP H</span>
+          <span style="font:600 13px Oswald; color:#9a8f5f;">8 / 12</span>
+        </div>
+        <div style="display:flex; gap:3px;">
+          <span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span><span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span><span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span><span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span><span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span><span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span><span style="flex:1; height:5px; border-radius:2px; background:#c0492f;"></span>
+          <span style="flex:1; height:5px; border-radius:2px; background:#211d17;"></span>
+          <span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span><span style="flex:1; height:5px; border-radius:2px; background:#cfc4ab;"></span>
+        </div>
+        <div style="font:600 13px Helvetica; color:#6b6457;">Who finishes <b style="color:#c0492f;">1st</b> &amp; <b style="color:#211d17;">2nd</b>?</div>
+
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">ESP</span>
+          <span style="flex:1; font:600 14px Helvetica;">Spain</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; background:#c0492f; color:#fff;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">URU</span>
+          <span style="flex:1; font:600 14px Helvetica;">Uruguay</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; color:#c0492f;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">KSA</span>
+          <span style="flex:1; font:600 14px Helvetica;">Saudi Arabia</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; color:#c0492f;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">CPV</span>
+          <span style="flex:1; font:600 14px Helvetica;">Cape Verde</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; color:#c0492f;">1ST</span>
+          <span style="font:700 11px Oswald; letter-spacing:.04em; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; color:#211d17;">2ND</span>
+        </div>
+
+        <div style="font:600 19px Caveat; color:#c0492f; text-align:center;">&uarr; nothing picked yet &middot; &ldquo;Next&rdquo; stays greyed out</div>
+        <div style="display:flex; gap:10px; margin-top:2px;">
+          <div style="flex:0 0 auto; border:2px solid #211d17; border-radius:11px; padding:12px 16px; font:700 14px Oswald;">BACK</div>
+          <div style="flex:1; background:#d8d0bf; color:#9a8f5f; border:2px dashed #9a8f5f; border-radius:11px; padding:12px; text-align:center; font:700 14px Oswald; letter-spacing:.06em;">NEXT GROUP &rarr;</div>
+        </div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9314;b &nbsp;Mid-flow &mdash; empty state</figcaption>
+    </figure>
+
+    <!-- 5. BEST THIRD-PLACE STEP -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:12px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font:700 22px Oswald;">&lsaquo;</span>
+          <span style="font:700 18px Oswald; letter-spacing:.03em;">BEST 3RD PLACES</span>
+          <span style="font:600 13px Oswald; color:#9a8f5f;">LAST STEP</span>
+        </div>
+        <div style="font:500 13px Helvetica; color:#6b6457; line-height:1.3;">8 of the 12 third-place teams advance. <b>Tap the 8 groups</b> whose 3rd-place team you think makes it. <b style="color:#7a6f3f;">2 pts each.</b></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; background:#faf2e6; border:1.5px dashed #7a6f3f; border-radius:10px; padding:8px 12px;">
+          <span style="font:700 13px Oswald; letter-spacing:.05em; color:#7a6f3f;">SELECTED</span>
+          <span style="font:700 16px Oswald; color:#7a6f3f;">8 / 8</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:7px;">
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP B &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">SUI / QAT / BIH</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP C &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">MAR / SCO / HAI</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP D &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">PAR / AUS / TUR</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP F &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">JPN / SWE / TUN</div></div>
+          <div style="border:1.5px solid #cfc4ab; border-radius:10px; padding:8px 9px; background:#fbf7ec; color:#9a8f5f;"><div style="font:700 14px Oswald; color:#211d17;">GROUP E</div><div style="font:500 10px Helvetica;">ECU / CIV / CUW</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP H &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">URU / KSA / CPV</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP I &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">SEN / IRQ / NOR</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP J &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">AUT / ALG / JOR</div></div>
+          <div style="border:2px solid #7a6f3f; border-radius:10px; padding:8px 9px; background:#7a6f3f; color:#fff;"><div style="font:700 14px Oswald;">GROUP K &#10003;</div><div style="font:500 10px Helvetica; opacity:.85;">COL / UZB / COD</div></div>
+          <div style="border:1.5px solid #cfc4ab; border-radius:10px; padding:8px 9px; background:#fbf7ec; color:#9a8f5f;"><div style="font:700 14px Oswald; color:#211d17;">GROUP L</div><div style="font:500 10px Helvetica;">CRO / GHA / PAN</div></div>
+        </div>
+        <div style="font:600 17px Caveat; color:#9a8f5f; text-align:center; line-height:1.1;">A, G greyed out &mdash; 8 already chosen, tap a green one to swap</div>
+        <div style="background:#c0492f; color:#fff; border:2px solid #211d17; border-radius:12px; padding:13px; text-align:center; font:700 15px Oswald; letter-spacing:.06em;">REVIEW MY PICKS &rarr;</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9315; &nbsp;Choose 8 best-3rd groups</figcaption>
+    </figure>
+
+    <!-- 6. REVIEW & SUBMIT -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:11px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="font:700 24px Oswald; text-transform:uppercase;">Review &amp; lock in</div>
+        <div style="font:600 18px Caveat; color:#6b6457;">Marco &middot; tap any row to edit</div>
+        <div style="display:flex; flex-direction:column; gap:5px; max-height:240px; overflow:hidden; border:1.5px solid #cfc4ab; border-radius:11px; padding:9px;">
+          <div style="display:flex; justify-content:space-between; font:600 12.5px Helvetica; padding:3px 2px; border-bottom:1px dashed #e0d8c4;"><span><b style="font:700 12px Oswald;">A</b> &nbsp;Mexico <span style="color:#9a8f5f;">&rsaquo; S. Korea</span></span><span style="color:#c0492f;">&#9998;</span></div>
+          <div style="display:flex; justify-content:space-between; font:600 12.5px Helvetica; padding:3px 2px; border-bottom:1px dashed #e0d8c4;"><span><b style="font:700 12px Oswald;">B</b> &nbsp;Switzerland <span style="color:#9a8f5f;">&rsaquo; Qatar</span></span><span style="color:#c0492f;">&#9998;</span></div>
+          <div style="display:flex; justify-content:space-between; font:600 12.5px Helvetica; padding:3px 2px; border-bottom:1px dashed #e0d8c4;"><span><b style="font:700 12px Oswald;">C</b> &nbsp;Brazil <span style="color:#9a8f5f;">&rsaquo; Morocco</span></span><span style="color:#c0492f;">&#9998;</span></div>
+          <div style="display:flex; justify-content:space-between; font:600 12.5px Helvetica; padding:3px 2px; border-bottom:1px dashed #e0d8c4;"><span><b style="font:700 12px Oswald;">D</b> &nbsp;USA <span style="color:#9a8f5f;">&rsaquo; Paraguay</span></span><span style="color:#c0492f;">&#9998;</span></div>
+          <div style="display:flex; justify-content:space-between; font:600 12.5px Helvetica; padding:3px 2px; border-bottom:1px dashed #e0d8c4;"><span><b style="font:700 12px Oswald;">E</b> &nbsp;Germany <span style="color:#9a8f5f;">&rsaquo; Ecuador</span></span><span style="color:#c0492f;">&#9998;</span></div>
+          <div style="display:flex; justify-content:space-between; font:600 12.5px Helvetica; padding:3px 2px; border-bottom:1px dashed #e0d8c4;"><span><b style="font:700 12px Oswald;">F</b> &nbsp;Netherlands <span style="color:#9a8f5f;">&rsaquo; Japan</span></span><span style="color:#c0492f;">&#9998;</span></div>
+          <div style="font:600 18px Caveat; color:#9a8f5f; text-align:center; padding-top:2px;">&hellip; G&ndash;L &middot; then your 8 best-3rd picks</div>
+        </div>
+        <div style="background:#211d17; color:#f6f0e2; border-radius:12px; padding:14px; text-align:center; font:700 16px Oswald; letter-spacing:.06em;">&#128274; &nbsp;LOCK IN MY PICKS</div>
+        <div style="font:600 17px Caveat; color:#c0492f; text-align:center; line-height:1.1;">Heads up &mdash; once you lock in, picks are final. No edits.</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9316; &nbsp;Review everything &amp; submit</figcaption>
+    </figure>
+
+    <!-- 7. CONFIRMATION / SHARE -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:18px 16px 22px; display:flex; flex-direction:column; gap:16px; min-height:430px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="text-align:center; margin-top:24px;">
+          <div style="font:700 60px Oswald; color:#c0492f; line-height:1;">&#9917;</div>
+          <div style="font:700 32px Oswald; text-transform:uppercase; margin-top:10px;">You&rsquo;re in,<br>Marco!</div>
+          <div style="font:600 22px Caveat; color:#6b6457; margin-top:8px;">Your picks are locked &amp; saved.</div>
+        </div>
+        <div style="border:1.5px dashed #cfc4ab; border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:9px;">
+          <div style="font:600 12px Helvetica; color:#6b6457; letter-spacing:.02em;">INVITE YOUR FRIENDS</div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <div style="flex:1; border:2px solid #211d17; border-radius:9px; padding:10px 11px; background:#fff; font:600 12px Helvetica; color:#6b6457; overflow:hidden; white-space:nowrap;">worldcup-pool.onrender.com</div>
+            <div style="border:2px solid #211d17; border-radius:9px; padding:10px 12px; font:700 12px Oswald; background:#d8c48f;">COPY</div>
+          </div>
+        </div>
+        <div style="border:2px solid #211d17; color:#211d17; border-radius:12px; padding:13px; text-align:center; font:700 14px Oswald; letter-spacing:.05em; background:#fbf7ec;">VIEW MY PICKS &middot; locked</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9317; &nbsp;Confirmed &middot; share the link</figcaption>
+    </figure>
+
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SECTION 2 — ADMIN & RESULTS -->
+  <!-- ============================================================= -->
+  <div style="max-width:1180px; margin:0 auto;">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:24px;">
+      <span style="font:700 17px Oswald; letter-spacing:.05em; color:#f6f0e2; background:#c0492f; border:2px solid #211d17; border-radius:30px; padding:6px 16px;">PART 2 &middot; ADMIN &amp; RESULTS &nbsp;(just you)</span>
+      <span style="flex:1; border-top:2px dashed rgba(255,255,255,.35);"></span>
+      <span style="font:600 21px Caveat; color:#e6b8ab;">hidden /admin link &middot; enter real results &middot; reveal when ready</span>
+    </div>
+  </div>
+
+  <div style="max-width:1180px; margin:0 auto 56px; display:flex; flex-wrap:wrap; gap:34px 30px;">
+
+    <!-- 8. ADMIN LOGIN -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:18px 16px 22px; display:flex; flex-direction:column; gap:16px; min-height:430px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="text-align:center; margin-top:30px;">
+          <div style="font:700 44px Oswald; line-height:1;">&#128274;</div>
+          <div style="font:700 26px Oswald; text-transform:uppercase; margin-top:12px;">Admin access</div>
+          <div style="font:600 20px Caveat; color:#6b6457; margin-top:4px;">/admin &middot; only you have this</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px; margin-top:6px;">
+          <label style="font:600 12px Helvetica; color:#6b6457; letter-spacing:.02em;">PASSCODE</label>
+          <div style="border:2px solid #211d17; border-radius:11px; padding:13px 14px; background:#fff; font:700 20px Oswald; letter-spacing:.5em; color:#b8b0a0;">&bull;&bull;&bull;&bull;</div>
+          <div style="margin-top:4px; background:#c0492f; color:#fff; border:2px solid #211d17; border-radius:12px; padding:13px; text-align:center; font:700 15px Oswald; letter-spacing:.06em;">UNLOCK</div>
+        </div>
+        <div style="font:600 17px Caveat; color:#9a8f5f; text-align:center; line-height:1.1;">One shared passcode set via env var. Keeps friends out of results.</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9318; &nbsp;You unlock the admin area</figcaption>
+    </figure>
+
+    <!-- 9. ADMIN DASHBOARD -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:12px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="font:700 24px Oswald; text-transform:uppercase;">Control room</div>
+        <div style="display:flex; gap:8px;">
+          <div style="flex:1; border:2px solid #211d17; border-radius:11px; padding:10px; text-align:center; background:#fbf7ec;"><div style="font:700 26px Oswald;">9</div><div style="font:600 10px Helvetica; color:#6b6457; letter-spacing:.04em;">ENTRIES IN</div></div>
+          <div style="flex:1; border:2px solid #211d17; border-radius:11px; padding:10px; text-align:center; background:#fbf7ec;"><div style="font:700 26px Oswald;">6/12</div><div style="font:600 10px Helvetica; color:#6b6457; letter-spacing:.04em;">RESULTS SET</div></div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:7px;">
+          <div style="background:#c0492f; color:#fff; border:2px solid #211d17; border-radius:11px; padding:13px; text-align:center; font:700 14px Oswald; letter-spacing:.05em;">ENTER / UPDATE REAL RESULTS</div>
+          <div style="border:2px solid #211d17; border-radius:11px; padding:13px; text-align:center; font:700 14px Oswald; letter-spacing:.05em; background:#fbf7ec;">VIEW LEADERBOARD</div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border:1.5px dashed #c0492f; border-radius:11px; padding:11px 13px; background:#faf2e6;">
+          <div><div style="font:700 13px Oswald;">CLOSE ENTRIES</div><div style="font:500 10px Helvetica; color:#6b6457;">lock everyone&rsquo;s picks</div></div>
+          <div style="width:46px; height:26px; border-radius:14px; background:#c0492f; border:2px solid #211d17; position:relative;"><span style="position:absolute; top:1px; right:1px; width:20px; height:20px; border-radius:50%; background:#fff;"></span></div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; border:1.5px dashed #7a6f3f; border-radius:11px; padding:11px 13px; background:#faf2e6;">
+          <div><div style="font:700 13px Oswald;">REVEAL PICKS TO ALL</div><div style="font:500 10px Helvetica; color:#6b6457;">friends see who chose what</div></div>
+          <div style="width:46px; height:26px; border-radius:14px; background:#d8d0bf; border:2px solid #211d17; position:relative;"><span style="position:absolute; top:1px; left:1px; width:20px; height:20px; border-radius:50%; background:#fff;"></span></div>
+        </div>
+        <div style="border-top:1.5px dashed #cfc4ab; padding-top:9px; display:flex; flex-direction:column; gap:4px;">
+          <div style="font:600 11px Helvetica; color:#6b6457; letter-spacing:.06em;">WHO&rsquo;S ENTERED</div>
+          <div style="font:500 12.5px Helvetica; color:#211d17; line-height:1.45;">Marco &middot; Lena &middot; Sam &middot; Priya &middot; Tom &middot; Ana &middot; Dev &middot; Mia &middot; Ben</div>
+        </div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9319; &nbsp;Dashboard: entries, lock &amp; reveal toggles</figcaption>
+    </figure>
+
+    <!-- 10. ENTER REAL RESULTS -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:12px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font:700 16px Oswald; color:#c0492f;">ACTUAL RESULTS</span>
+          <span style="font:600 13px Oswald; color:#9a8f5f;">GROUP A</span>
+        </div>
+        <div style="font:500 12.5px Helvetica; color:#6b6457; line-height:1.3;">Enter how each group <b>really finished</b>. Same picker UI you already know.</div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">MEX</span>
+          <span style="flex:1; font:600 14px Helvetica;">Mexico</span>
+          <span style="font:700 11px Oswald; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; background:#c0492f; color:#fff;">1ST</span>
+          <span style="font:700 11px Oswald; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px;">2ND</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px; padding:8px 9px; border:1.5px solid #cfc4ab; border-radius:11px; background:#fbf7ec;">
+          <span style="width:26px; height:19px; border:1.5px solid #211d17; border-radius:3px; display:flex; align-items:center; justify-content:center; font:700 8px Helvetica; background:#ece3cd;">CZE</span>
+          <span style="flex:1; font:600 14px Helvetica;">Czechia</span>
+          <span style="font:700 11px Oswald; border:1.5px solid #c0492f; border-radius:7px; padding:5px 8px; color:#c0492f;">1ST</span>
+          <span style="font:700 11px Oswald; border:1.5px solid #211d17; border-radius:7px; padding:5px 8px; background:#211d17; color:#f6f0e2;">2ND</span>
+        </div>
+        <div style="font:600 17px Caveat; color:#9a8f5f; text-align:center;">&hellip; + mark the real 8 best-3rd groups</div>
+        <div style="border:1.5px dashed #7a6f3f; border-radius:11px; padding:10px 12px; background:#faf2e6;">
+          <div style="font:700 12px Oswald; color:#7a6f3f; letter-spacing:.06em; margin-bottom:6px;">REAL BEST-3RD (8 of 12)</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">B</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">C</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">E</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">F</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">H</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">I</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">K</span><span style="font:700 11px Oswald; background:#7a6f3f; color:#fff; border-radius:6px; padding:3px 7px;">L</span>
+          </div>
+        </div>
+        <div style="background:#211d17; color:#f6f0e2; border-radius:12px; padding:13px; text-align:center; font:700 14px Oswald; letter-spacing:.05em;">SAVE RESULTS &amp; RESCORE</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9320; &nbsp;You enter the real outcomes</figcaption>
+    </figure>
+
+    <!-- 11. LEADERBOARD -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:11px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="font:700 24px Oswald; text-transform:uppercase;">Leaderboard</div>
+        <div style="display:flex; align-items:center; gap:8px; font:600 16px Caveat; color:#6b6457;"><span style="display:inline-block; width:12px; height:12px; background:#211d17; border-radius:3px;"></span> group pts <span style="display:inline-block; width:12px; height:12px; background:#7a6f3f; border-radius:3px; margin-left:6px;"></span> best-3rd pts</div>
+
+        <!-- row 1 -->
+        <div style="border:2px solid #211d17; border-radius:12px; padding:10px 11px; background:#fbf7ec; display:flex; flex-direction:column; gap:7px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="font:700 20px Oswald; width:22px;">1</span>
+            <span style="flex:1; font:600 15px Helvetica;">Priya</span>
+            <span style="font:700 22px Oswald; color:#c0492f;">41</span>
+          </div>
+          <div style="display:flex; height:9px; border-radius:5px; overflow:hidden; border:1px solid #211d17;"><span style="width:73%; background:#211d17;"></span><span style="width:27%; background:#7a6f3f;"></span></div>
+          <div style="font:500 11px Helvetica; color:#6b6457;">30 group &middot; 10 best-3rd &middot; 5 of 8 third hit</div>
+        </div>
+        <!-- row 2 -->
+        <div style="border:1.5px solid #cfc4ab; border-radius:12px; padding:10px 11px; background:#fbf7ec; display:flex; flex-direction:column; gap:7px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="font:700 20px Oswald; width:22px;">2</span>
+            <span style="flex:1; font:600 15px Helvetica;">Marco</span>
+            <span style="font:700 22px Oswald;">37</span>
+          </div>
+          <div style="display:flex; height:9px; border-radius:5px; overflow:hidden; border:1px solid #211d17;"><span style="width:78%; background:#211d17;"></span><span style="width:22%; background:#7a6f3f;"></span></div>
+          <div style="font:500 11px Helvetica; color:#6b6457;">29 group &middot; 8 best-3rd &middot; 4 of 8 third hit</div>
+        </div>
+        <!-- row 3 -->
+        <div style="border:1.5px solid #cfc4ab; border-radius:12px; padding:10px 11px; background:#fbf7ec; display:flex; align-items:center; gap:10px;">
+          <span style="font:700 20px Oswald; width:22px;">3</span>
+          <span style="flex:1; font:600 15px Helvetica;">Lena</span>
+          <span style="font:700 22px Oswald;">33</span>
+          <span style="font:700 16px Oswald; color:#9a8f5f;">&#9662;</span>
+        </div>
+        <div style="font:600 16px Caveat; color:#9a8f5f; text-align:center;">&hellip; Sam, Tom, Ana, Dev, Mia, Ben</div>
+        <div style="font:600 18px Caveat; color:#c0492f; text-align:center; line-height:1.1;">Tap a friend &rarr; pick-by-pick breakdown</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9321; &nbsp;Ranked + group vs 3rd breakdown</figcaption>
+    </figure>
+
+    <!-- 12. REVEAL / PLAYER DETAIL -->
+    <figure style="margin:0; display:flex; flex-direction:column; gap:12px; align-items:center; width:332px;">
+      <div style="position:relative; width:332px; background:#f6f0e2; border:2.5px solid #211d17; border-radius:26px; box-shadow:5px 6px 0 rgba(33,29,23,.18); padding:16px 15px 20px; display:flex; flex-direction:column; gap:11px;">
+        <div style="width:54px; height:5px; border-radius:3px; background:#cfc7b4; margin:0 auto;"></div>
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span style="font:700 22px Oswald;">&lsaquo;</span>
+          <span style="font:700 20px Oswald;">PRIYA &middot; 41</span>
+          <span style="font:600 13px Oswald; color:#9a8f5f;">#1</span>
+        </div>
+        <div style="font:600 17px Caveat; color:#6b6457;">Picks vs actual &middot; &#10003; hit &middot; &#10007; miss</div>
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <div style="display:flex; align-items:center; gap:8px; font:600 12.5px Helvetica; padding:6px 9px; border-radius:9px; background:#eef3e7; border:1px solid #cdd9bf;"><b style="font:700 12px Oswald; width:16px;">A</b><span style="flex:1;">Mexico &rsaquo; S. Korea</span><span style="color:#3f7a4a; font-weight:700;">&#10003; +5</span></div>
+          <div style="display:flex; align-items:center; gap:8px; font:600 12.5px Helvetica; padding:6px 9px; border-radius:9px; background:#f7e9e6; border:1px solid #e3c4bc;"><b style="font:700 12px Oswald; width:16px;">B</b><span style="flex:1;">Qatar &rsaquo; Switzerland</span><span style="color:#c0492f; font-weight:700;">&#10007; +0</span></div>
+          <div style="display:flex; align-items:center; gap:8px; font:600 12.5px Helvetica; padding:6px 9px; border-radius:9px; background:#eef3e7; border:1px solid #cdd9bf;"><b style="font:700 12px Oswald; width:16px;">C</b><span style="flex:1;">Brazil &rsaquo; Morocco</span><span style="color:#3f7a4a; font-weight:700;">&#10003; +5</span></div>
+          <div style="display:flex; align-items:center; gap:8px; font:600 12.5px Helvetica; padding:6px 9px; border-radius:9px; background:#faf2e6; border:1px solid #e3d6b8;"><b style="font:700 12px Oswald; width:16px;">D</b><span style="flex:1;">USA &rsaquo; Australia</span><span style="color:#7a6f3f; font-weight:700;">&frac12; +3</span></div>
+        </div>
+        <div style="border:1.5px dashed #7a6f3f; border-radius:11px; padding:9px 11px; background:#faf2e6;">
+          <div style="font:700 11px Oswald; color:#7a6f3f; letter-spacing:.06em; margin-bottom:5px;">BEST-3RD &middot; 5 of 8 correct (+10)</div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px;">
+            <span style="font:700 10px Oswald; background:#3f7a4a; color:#fff; border-radius:5px; padding:2px 6px;">B&#10003;</span><span style="font:700 10px Oswald; background:#3f7a4a; color:#fff; border-radius:5px; padding:2px 6px;">C&#10003;</span><span style="font:700 10px Oswald; background:#c0492f; color:#fff; border-radius:5px; padding:2px 6px;">D&#10007;</span><span style="font:700 10px Oswald; background:#3f7a4a; color:#fff; border-radius:5px; padding:2px 6px;">F&#10003;</span><span style="font:700 10px Oswald; background:#3f7a4a; color:#fff; border-radius:5px; padding:2px 6px;">H&#10003;</span><span style="font:700 10px Oswald; background:#c0492f; color:#fff; border-radius:5px; padding:2px 6px;">J&#10007;</span><span style="font:700 10px Oswald; background:#3f7a4a; color:#fff; border-radius:5px; padding:2px 6px;">K&#10003;</span><span style="font:700 10px Oswald; background:#c0492f; color:#fff; border-radius:5px; padding:2px 6px;">L&#10007;</span>
+          </div>
+        </div>
+        <div style="font:600 17px Caveat; color:#9a8f5f; text-align:center; line-height:1.1;">Only visible after you flip &ldquo;Reveal picks&rdquo; on.</div>
+      </div>
+      <figcaption style="font:700 21px Caveat; color:#f4eedf;">&#9322; &nbsp;Reveal: each pick vs reality</figcaption>
+    </figure>
+
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SPEC CARD FOR CLAUDE CODE -->
+  <!-- ============================================================= -->
+  <div style="max-width:1180px; margin:0 auto;">
+    <div style="background:#f6f0e2; border:2.5px solid #211d17; border-radius:20px; box-shadow:6px 7px 0 rgba(33,29,23,.22); padding:26px 28px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+        <span style="font:700 13px Oswald; letter-spacing:.18em; color:#c0492f;">HANDOFF NOTES</span>
+        <span style="flex:1; border-top:2px dashed #cfc4ab;"></span>
+      </div>
+      <h2 style="margin:0 0 18px; font:700 30px Oswald; text-transform:uppercase;">Build spec for Claude Code</h2>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px 30px;">
+
+        <div>
+          <div style="font:700 14px Oswald; letter-spacing:.06em; color:#c0492f; margin-bottom:8px;">SCORING (max 76)</div>
+          <ul style="margin:0; padding-left:18px; font:500 13.5px Helvetica; line-height:1.55; color:#211d17;">
+            <li>Correct group <b>winner</b> = <b>3</b></li>
+            <li>Correct group <b>runner-up</b> = <b>2</b></li>
+            <li>Each correct <b>best-3rd group</b> = <b>2</b> (8 to pick)</li>
+            <li>Per group max 5 &middot; 12&times;5 = 60 &middot; + 8&times;2 = <b>76</b></li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font:700 14px Oswald; letter-spacing:.06em; color:#c0492f; margin-bottom:8px;">DATA MODEL</div>
+          <ul style="margin:0; padding-left:18px; font:500 13.5px Helvetica; line-height:1.55; color:#211d17;">
+            <li><b>Player</b> { id, name, createdAt }</li>
+            <li><b>Pick</b> { playerId, group A&ndash;L: {first, second} }</li>
+            <li><b>ThirdPicks</b> { playerId, groups[8] }</li>
+            <li><b>Results</b> { group: {first, second}, best3rdGroups[8] }</li>
+            <li><b>Settings</b> { entriesOpen, picksRevealed, adminCode }</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font:700 14px Oswald; letter-spacing:.06em; color:#c0492f; margin-bottom:8px;">HOSTING (Render)</div>
+          <ul style="margin:0; padding-left:18px; font:500 13.5px Helvetica; line-height:1.55; color:#211d17;">
+            <li>Friends each open on their own phone &rarr; needs <b>shared storage</b>, not localStorage.</li>
+            <li>Tiny backend + DB (SQLite/Postgres). One web service on Render.</li>
+            <li>Admin guarded by a single passcode env var.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font:700 14px Oswald; letter-spacing:.06em; color:#c0492f; margin-bottom:8px;">RULES &amp; STATES</div>
+          <ul style="margin:0; padding-left:18px; font:500 13.5px Helvetica; line-height:1.55; color:#211d17;">
+            <li>Identity = name only (no auth). Name stored in a cookie so they can re-edit.</li>
+            <li><b>Final on submit</b> &mdash; no edits once a player locks in.</li>
+            <li>Picks hidden from friends until admin <b>Reveals</b>.</li>
+            <li>Re-score automatically whenever results change.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div style="margin-top:20px; border:1.5px solid #3f7a4a; border-radius:12px; padding:14px 16px; background:#eef3e7;">
+        <div style="font:700 13px Oswald; letter-spacing:.06em; color:#3f7a4a; margin-bottom:6px;">&#10003; DECISIONS &mdash; LOCKED</div>
+        <div style="font:500 13.5px Helvetica; line-height:1.55; color:#211d17;">
+          <b>Best-3rd = GROUP level.</b> Pick 8 of 12 groups whose 3rd-place team advances; 2 pts per correct group (no specific-team naming). &middot; <b>Picks final on submit</b> &mdash; no edits afterwards. &middot; <b>Tie-breaker</b> handled manually by the admin if it ever comes up (no in-app rule needed).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px; margin:26px auto 0; text-align:center; font:600 20px Caveat; color:#d8c48f;">All 48 teams reflect the real Dec 5 2025 draw &middot; flags shown as grey boxes in wireframe, real flags in build.</div>
+
+</div>
+</x-dc>
+</body>
+</html>

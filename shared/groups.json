@@ -1,0 +1,74 @@
+{
+  "A": [
+    { "code": "MEX", "name": "Mexico", "iso": "mx" },
+    { "code": "KOR", "name": "South Korea", "iso": "kr" },
+    { "code": "CZE", "name": "Czechia", "iso": "cz" },
+    { "code": "RSA", "name": "South Africa", "iso": "za" }
+  ],
+  "B": [
+    { "code": "CAN", "name": "Canada", "iso": "ca" },
+    { "code": "SUI", "name": "Switzerland", "iso": "ch" },
+    { "code": "QAT", "name": "Qatar", "iso": "qa" },
+    { "code": "BIH", "name": "Bosnia & Herzegovina", "iso": "ba" }
+  ],
+  "C": [
+    { "code": "BRA", "name": "Brazil", "iso": "br" },
+    { "code": "MAR", "name": "Morocco", "iso": "ma" },
+    { "code": "SCO", "name": "Scotland", "iso": "gb-sct" },
+    { "code": "HAI", "name": "Haiti", "iso": "ht" }
+  ],
+  "D": [
+    { "code": "USA", "name": "USA", "iso": "us" },
+    { "code": "PAR", "name": "Paraguay", "iso": "py" },
+    { "code": "AUS", "name": "Australia", "iso": "au" },
+    { "code": "TUR", "name": "Türkiye", "iso": "tr" }
+  ],
+  "E": [
+    { "code": "GER", "name": "Germany", "iso": "de" },
+    { "code": "ECU", "name": "Ecuador", "iso": "ec" },
+    { "code": "CIV", "name": "Côte d'Ivoire", "iso": "ci" },
+    { "code": "CUW", "name": "Curaçao", "iso": "cw" }
+  ],
+  "F": [
+    { "code": "NED", "name": "Netherlands", "iso": "nl" },
+    { "code": "JPN", "name": "Japan", "iso": "jp" },
+    { "code": "SWE", "name": "Sweden", "iso": "se" },
+    { "code": "TUN", "name": "Tunisia", "iso": "tn" }
+  ],
+  "G": [
+    { "code": "BEL", "name": "Belgium", "iso": "be" },
+    { "code": "EGY", "name": "Egypt", "iso": "eg" },
+    { "code": "IRN", "name": "Iran", "iso": "ir" },
+    { "code": "NZL", "name": "New Zealand", "iso": "nz" }
+  ],
+  "H": [
+    { "code": "ESP", "name": "Spain", "iso": "es" },
+    { "code": "URU", "name": "Uruguay", "iso": "uy" },
+    { "code": "KSA", "name": "Saudi Arabia", "iso": "sa" },
+    { "code": "CPV", "name": "Cape Verde", "iso": "cv" }
+  ],
+  "I": [
+    { "code": "FRA", "name": "France", "iso": "fr" },
+    { "code": "SEN", "name": "Senegal", "iso": "sn" },
+    { "code": "IRQ", "name": "Iraq", "iso": "iq" },
+    { "code": "NOR", "name": "Norway", "iso": "no" }
+  ],
+  "J": [
+    { "code": "ARG", "name": "Argentina", "iso": "ar" },
+    { "code": "ALG", "name": "Algeria", "iso": "dz" },
+    { "code": "AUT", "name": "Austria", "iso": "at" },
+    { "code": "JOR", "name": "Jordan", "iso": "jo" }
+  ],
+  "K": [
+    { "code": "POR", "name": "Portugal", "iso": "pt" },
+    { "code": "COL", "name": "Colombia", "iso": "co" },
+    { "code": "UZB", "name": "Uzbekistan", "iso": "uz" },
+    { "code": "COD", "name": "DR Congo", "iso": "cd" }
+  ],
+  "L": [
+    { "code": "ENG", "name": "England", "iso": "gb-eng" },
+    { "code": "CRO", "name": "Croatia", "iso": "hr" },
+    { "code": "GHA", "name": "Ghana", "iso": "gh" },
+    { "code": "PAN", "name": "Panama", "iso": "pa" }
+  ]
+}
