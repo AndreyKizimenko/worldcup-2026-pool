@@ -137,6 +137,7 @@ function how() {
       <div class="ph">POINTS</div>
       <div class="pr"><span>Correct group winner</span><b>3</b></div>
       <div class="pr"><span>Correct runner-up</span><b>2</b></div>
+      <div class="pr"><span>Right team, wrong spot</span><b>1</b></div>
       <div class="pr"><span>Each correct best-3rd team</span><b>2</b></div>
     </div>
     <div class="note">Max possible = 76 points</div>

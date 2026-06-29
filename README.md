@@ -14,6 +14,8 @@ World Cup group stage, auto-score each other, and crown a winner. Built from the
   their full pick-by-pick breakdown vs the real results.
 
 **Scoring (max 76):** correct group winner = **3**, correct runner-up = **2**,
+**right team but wrong spot = 1** per misplaced qualifier (e.g. you named both top-2
+teams but reversed their order → 1 + 1 = 2; exact picks still cap a group at 5),
 each correct best-3rd group = **2** (8 to pick). 12×5 + 8×2 = **76**.
 
 ## Run locally

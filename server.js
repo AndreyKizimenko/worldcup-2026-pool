@@ -74,9 +74,18 @@ function scorePlayer(player, results) {
       groups[g] = { first: pick.first || null, second: pick.second || null, points: 0, status: 'pending' };
       continue;
     }
+    // Exact slot: 1st = 3, 2nd = 2. Otherwise, if the team you named still qualified
+    // (finished in the real top 2) but in the wrong slot, it's worth +1. Each of your
+    // two picks is judged independently, so a full order-swap earns 1 + 1 = 2.
     let pts = 0;
-    if (pick.first && pick.first === real.first) pts += 3;
-    if (pick.second && pick.second === real.second) pts += 2;
+    if (pick.first) {
+      if (pick.first === real.first) pts += 3;
+      else if (pick.first === real.second) pts += 1;
+    }
+    if (pick.second) {
+      if (pick.second === real.second) pts += 2;
+      else if (pick.second === real.first) pts += 1;
+    }
     const status = pts === 5 ? 'hit' : pts === 0 ? 'miss' : 'partial';
     groups[g] = { first: pick.first || null, second: pick.second || null, points: pts, status };
     groupPoints += pts;
